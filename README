@@ -1,0 +1,15 @@
+This is a simple project that generates football fixtures given an input file, which format is as follows:
+
+4			(number of participant teams)
+England		(names of teams)
+Brazil
+Scotland
+South Africa
+
+Compile:
+$ make
+
+Clean:
+$ make clean
+or
+$ make clean-all
