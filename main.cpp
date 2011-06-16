@@ -24,12 +24,7 @@ int main(int argc, char **argv)
 		return 2;
 	}
 
-	if (!fixture_init(&teams))
-	{
-		cerr << "Odd number of teams is not allowed yet\n";
-		return 3;
-	}
-
+	fixture_init(&teams);
 	fixture_print(1, teams.size());
 	fixture_pair(teams);
 	for (int i = 1; i < teams.size() - 1; i++)

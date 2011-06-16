@@ -4,9 +4,10 @@
 
 using namespace std;
 
-bool fixture_init(list<string> *t)
+void fixture_init(list<string> *t)
 {
-	return !(t->size() % 2);
+	if (t->size() % 2)
+		t->push_back("?");
 }
 
 void fixture_rotate_clockwise(list<string> *t)
@@ -29,7 +30,8 @@ void fixture_pair(const list<string> &t)
 
 	for (int i = 0; i < half; i++)
 	{
-		cout << *home << "\t\tvs\t\t" << *away << endl;
+		if (*home != "?" && *away != "?")
+			cout << *home << "\t\tvs\t\t" << *away << endl;
 		home++; away++;
 	}
 }
