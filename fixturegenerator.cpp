@@ -50,7 +50,7 @@ void fixture_print(int num, int last)
 	if (num > 1)
 		cout << '\n';
 
-	if (num != last)
+	if (num != (last - 1))
 		cout << "------- Fixture " << num << " -------\n";
 	else
 		cout << "------- Final Fixture -------\n";
