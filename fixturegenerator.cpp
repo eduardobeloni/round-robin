@@ -1,11 +1,20 @@
 #include <iostream>
+#include <iomanip>
 
 #include "fixturegenerator.h"
 
 using namespace std;
 
+static int largest = 0;
+
 void fixture_init(list<string> *t)
 {
+	for (list<string>::const_iterator it = t->begin(); it != t->end(); it++)
+	{
+		if ((*it).size() > ::largest)
+			::largest = (*it).size();
+	}
+
 	if (t->size() % 2)
 		t->push_back("?");
 }
@@ -31,7 +40,7 @@ void fixture_pair(const list<string> &t)
 	for (int i = 0; i < half; i++)
 	{
 		if (*home != "?" && *away != "?")
-			cout << *home << "\t\tvs\t\t" << *away << endl;
+			cout << setw(::largest) << *home << "  vs  " << *away << endl;
 		home++; away++;
 	}
 }
