@@ -23,6 +23,12 @@ int main(int argc, char **argv)
 		cerr << "There are no teams to generate fixtures\n";
 		return 2;
 	}
+	else if (teams.size() < 3)
+	{
+		cerr << "There is no reason to generate fixtures for "
+			<< teams.size() << " teams \n";
+		return 2;
+	}
 
 	fixture_init(&teams);
 	fixture_print(1, teams.size());
