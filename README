@@ -1,4 +1,4 @@
-This is a simple project that generates football fixtures given an input file, which format is as follows:
+This is a simple project that generates football fixtures for a given set of teams in a file, which format is as follows:
 
 4			(number of participant teams)
 England		(names of teams)
@@ -11,5 +11,6 @@ $ make
 
 Clean:
 $ make clean
-or
-$ make clean-all
+
+Usage:
+$ fixturegen <team list file>
