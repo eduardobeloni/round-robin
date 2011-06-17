@@ -31,12 +31,12 @@ int main(int argc, char **argv)
 	}
 
 	fixture_init(&teams);
-	fixture_print(1, teams.size());
+	fixture_print_header(1, teams.size());
 	fixture_pair(teams);
 	for (int i = 1; i < teams.size() - 1; i++)
 	{
 		fixture_rotate_clockwise(&teams);
-		fixture_print(i + 1, teams.size());
+		fixture_print_header(i + 1, teams.size());
 		fixture_pair(teams);
 	}
 

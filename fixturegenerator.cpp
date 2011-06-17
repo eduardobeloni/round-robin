@@ -6,6 +6,7 @@
 using namespace std;
 
 static int largest = 0;
+static void print_nchar(char c, int n);
 
 void fixture_init(list<string> *t)
 {
@@ -45,13 +46,29 @@ void fixture_pair(const list<string> &t)
 	}
 }
 
-void fixture_print(int num, int last)
+void fixture_print_header(int num, int last)
 {
 	if (num > 1)
 		cout << '\n';
 
 	if (num != (last - 1))
-		cout << "------- Fixture " << num << " -------\n";
+	{
+		print_nchar('-', ::largest);
+		cout << " Fixture " << num << ' ';
+		print_nchar('-', ::largest);
+		cout << '\n';
+	}
 	else
-		cout << "------- Final Fixture -------\n";
+	{
+		print_nchar('-', ::largest);
+		cout << " Final Fixture ";
+		print_nchar('-', ::largest);
+		cout << '\n';
+	}
+}
+
+void print_nchar(char c, int n)
+{
+	for (int i = 0; i < n; i++)
+		cout.put(c);
 }
