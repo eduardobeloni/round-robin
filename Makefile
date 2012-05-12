@@ -1,16 +1,20 @@
-all: fixturegen
-	
-fixturegen: main.o fixturegenerator.o
-	g++ main.o fixturegenerator.o -o fixturegen $(CXXFLAGS)
+CXX = g++
+SRC = $(wildcard *.cpp)
 
-main.o: main.cpp fixturegenerator.h
-	g++ -c $(CXXFLAGS) main.cpp
+OBJ = $(SRC:.cpp=.o)
+TARGET = fixturegen
+CXXFLAGS += -O2
 
-fixturegenerator.o: fixturegenerator.cpp fixturegenerator.h
-	g++ -c $(CXXFLAGS) fixturegenerator.cpp
+default: $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $@
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf *o fixturegen
+	rm -rf *.o $(TARGET)
 
 clean-all:
-	rm -rf *o *~ fixturegen
+	rm -rf *.o *~ $(TARGET)
