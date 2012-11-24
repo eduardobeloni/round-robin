@@ -2,13 +2,13 @@ CXX = g++
 SRC = $(wildcard *.cpp)
 
 OBJ = $(SRC:.cpp=.o)
-TARGET = fixturegen
+TARGET = round-robin
 CXXFLAGS += -O2
 
 default: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

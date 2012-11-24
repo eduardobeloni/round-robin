@@ -1,6 +1,9 @@
-This is a simple project that generates football fixtures for a given set of teams in a file, which format is as follows:
+A round-robin tournament (or all-play-all tournament) is a competition in which each contestant meets all other
+contestants in turn.
 
-4			(number of participant teams)
+This simple project generates football fixtures in round-robin format for a given set of teams using a input file, which format is as follows:
+
+4     		(number of participant teams)
 England		(names of teams)
 Brazil
 Scotland
@@ -13,4 +16,4 @@ Clean:
 $ make clean
 
 Usage:
-$ fixturegen <team list file>
+$ round-robin <team list file>
