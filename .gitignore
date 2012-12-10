@@ -1,4 +1,5 @@
 *~
 *.o
 *.lo
+*.d
 round-robin
